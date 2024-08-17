@@ -1,3 +1,38 @@
+Nest JS
+
+--- nestjs - server side application qurish uchun xizmat qiladigan Node.JS
+framework hisoblanadi
+
+--- nestjs express ustida qurilgan framwork hisoblanadi.
+
+--- nestjs husuyatlari.
+-efficient   => eng qisqa va optimal yol bilan olib boradigan yol
+-progressive => loyihani ozimiz hohlagancha kengaytirish imkonini beradi.
+-reliable    => ishonsa boladigan
+-scalable    => loyihani gorizantal yoki vertikal scalling imkonini beradi.
+
+--- nestjs TypeScript bn toliq ishlaydigan framework hisoblanadi. Va bizga bu statc
+va dynamic type integrationlarni amalga oshrib beradi. Va bu bn biz juda ham katta loyihalarni nestjs
+framework bn qurish imkonini beradi.
+
+--- nestjs ning eng kuchli tomoni ham OOP ning AOP paradigmasiga moslashgani va bu bizga modelerni qurishda xizmatga keladi
+
+--- nestjs 4 ta pettrn bn ishlaydi
+-arch (MVS) (DI)
+-design (Middleware) (Decorator)
+
+
+--- nestjs ozini shaxsiy comnlinega ega va bu bizga qisqa vaqtda tayyor codlarni olish imkonini beradi
+
+1.npm i -g @nestjs/cli - netjs ni urnatib beradi
+2. cd ~ 
+3. cd Desktop
+4. nest new zoo
+5. npm
+va bizga tayyor codlarni ochib beradi
+
 // ComponentModelda - Api serverga tegishli bolgan mantiqlarimizni yozamiz
 
 // package.jsondagi  NODE_ENV VAZIFASI:  bizni loyihamiz qaysi rejimda run bolayotganini aniqlashtirib beradi.
+
+//schema yoziladigan filler bular class shuning uchun katta harfda yozilad.
