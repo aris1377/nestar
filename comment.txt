@@ -1,0 +1,3 @@
+// ComponentModelda - Api serverga tegishli bolgan mantiqlarimizni yozamiz
+
+// package.jsondagi  NODE_ENV VAZIFASI:  bizni loyihamiz qaysi rejimda run bolayotganini aniqlashtirib beradi.
