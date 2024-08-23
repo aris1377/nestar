@@ -1,13 +1,13 @@
 // ZL-TASK:
 
-function stringToKebab(str: string): string {
-	return str
-		.replace(/([a-z])([A-Z])/g, '$1-$2')
-		.replace(/\s+/g, '-')
-		.toLowerCase();
-}
+// function stringToKebab(str: string): string {
+// 	return str
+// 		.replace(/([a-z])([A-Z])/g, '$1-$2')
+// 		.replace(/\s+/g, '-')
+// 		.toLowerCase();
+// }
 
-console.log(stringToKebab('I love Kebab'));
+// console.log(stringToKebab('I love Kebab'));
 
 // Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin.
 // Bosh harflarni kichik harflarga ham otkazsin.
