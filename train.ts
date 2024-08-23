@@ -7,7 +7,7 @@
 // MASALAN: reverseInteger(123456789); return 987654321;
 
 // Yuqoridagi misolda, function kiritilgan raqamlarni orqasiga
-// o'girib (reverse) qilib qaytarmoqda.
+// o'girib (reverse) qilib qaytarmoqda. qq
 
 function reverseInteger(num: number): number {
 	const reversedNum = parseInt(num.toString().split('').reverse().join(''));
