@@ -1,3 +1,20 @@
+// TASK ZM:
+
+// Shunday function yozing, va bu function parametr
+// sifatida raqamlarni qabul qilsin. Bu function qabul qilingan
+// raqamlarni orqasiga o'girib qaytarsin
+
+// MASALAN: reverseInteger(123456789); return 987654321;
+
+// Yuqoridagi misolda, function kiritilgan raqamlarni orqasiga
+// o'girib (reverse) qilib qaytarmoqda.
+
+function reverseInteger(num: number): number {
+	const reversedNum = parseInt(num.toString().split('').reverse().join(''));
+	return reversedNum;
+}
+console.log(reverseInteger(123456789));
+
 // ZL-TASK:
 
 // function stringToKebab(str: string): string {
