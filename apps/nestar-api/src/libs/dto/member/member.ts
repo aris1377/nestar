@@ -76,5 +76,8 @@ export class Member {
     createdAt?: Date;
 
     @Field(() => Date)
-    updatedAt?: Date;
+	updatedAt?: Date;
+	
+	@Field(() => String, { nullable: true })
+	accessToken?: string;
 }
