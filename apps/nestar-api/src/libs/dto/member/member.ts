@@ -69,15 +69,30 @@ export class Member {
 	@Field(() => Int)
 	memberBlocks: number;
 
-    @Field(() => Date,{ nullable: true })
-    deletedAt?: Date;
+	@Field(() => Date, { nullable: true })
+	deletedAt?: Date;
 
-    @Field(() => Date)
-    createdAt?: Date;
+	@Field(() => Date)
+	createdAt?: Date;
 
-    @Field(() => Date)
+	@Field(() => Date)
 	updatedAt?: Date;
-	
+
 	@Field(() => String, { nullable: true })
 	accessToken?: string;
+}
+
+@ObjectType()
+export class TotalCounter {
+	@Field(() => Int, { nullable: true })
+	total: number;
+}
+
+@ObjectType()
+export class Members {
+	@Field(() => [Member])
+	list: Member[];
+
+	@Field(() => [TotalCounter], { nullable: true })
+	metaCounter: TotalCounter[];
 }
