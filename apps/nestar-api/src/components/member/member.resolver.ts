@@ -105,6 +105,7 @@ export class MemberResolver {
 	@UseGuards(AuthGuard)
 	@Mutation((returns) => String)
 	public async imageUploader(
+		//file nami ostida imagelari qabul etadiu
 		@Args({ name: 'file', type: () => GraphQLUpload })
 		{ createReadStream, filename, mimetype }: FileUpload,
 		@Args('target') target: String,
