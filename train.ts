@@ -1,3 +1,29 @@
+// ZQ-TASK:
+
+// Shunday function yozing, u parametridagi array ichida 2 marta qaytarilgan sonlarni alohida araryda qaytarsin.
+// MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4]
+function findDuplicates(arr: number[]): number[] {
+    const seen: Set<number> = new Set();
+    const duplicates: Set<number> = new Set();
+
+    for (const num of arr) {
+        if (seen.has(num)) {
+            duplicates.add(num);
+        } else {
+            seen.add(num);
+        }
+    }
+
+    return Array.from(duplicates);
+}
+
+
+const result = findDuplicates([1, 2, 3,4, 5, 4, 3, 4]);
+console.log(result); 
+
+
+
+
 // ZP-TASK:
 
 // shunday function yozing, u 2 ta array parametr qabul qilsin. 
@@ -9,35 +35,35 @@
 // areArraysEqual([1, 2, 3], [4, 1, 2]) // false
 
 
-function areArraysEqual(arr1: number[], arr2: number[]): boolean {
-	const countElements = (arr: number[]): Map<number, number> => {
-		const countMap = new Map<number, number>();
-		for (const num of arr) {
-			countMap.set(num, (countMap.get(num) || 0) + 1);
-		}
-		return countMap;
-	};
+// function areArraysEqual(arr1: number[], arr2: number[]): boolean {
+// 	const countElements = (arr: number[]): Map<number, number> => {
+// 		const countMap = new Map<number, number>();
+// 		for (const num of arr) {
+// 			countMap.set(num, (countMap.get(num) || 0) + 1);
+// 		}
+// 		return countMap;
+// 	};
 
-	const map1 = countElements(arr1);
-	const map2 = countElements(arr2);
+// 	const map1 = countElements(arr1);
+// 	const map2 = countElements(arr2);
 
-	if (map1.size !== map2.size) {
-		return false;
-	}
+// 	if (map1.size !== map2.size) {
+// 		return false;
+// 	}
 
-	for (const [key, value] of map1) {
-		if (map2.get(key) !== value) {
-			return false;
-		}
-	}
+// 	for (const [key, value] of map1) {
+// 		if (map2.get(key) !== value) {
+// 			return false;
+// 		}
+// 	}
 
-	return true;
-}
+// 	return true;
+// }
 
-// Misollar:
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
-console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1])); 
-console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
+// // Misollar:
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2]));
+// console.log(areArraysEqual([1, 2, 3], [3, 1, 2, 1])); 
+// console.log(areArraysEqual([1, 2, 3], [4, 1, 2]));
 
 // ZO-TASK:
 
