@@ -54,16 +54,7 @@ export class PropertyService {
 		targetProperty.memberData = await this.memberService.getMember(null, targetProperty.memberId);
 		return targetProperty;
 	}
-	public async propertyStatsEditor(input: StatisticModifier): Promise<Property> {
-		const { _id, targetKey, modifier } = input;
-		return await this.propertyModel.findOneAndUpdate(
-			_id,
-			{
-				$inc: { [targetKey]: modifier },
-			},
-			{ new: true },
-		).exec();
-	}
+
 
 
 	public async updateProperty(memberId: ObjectId, input: PropertyUpdate): Promise<Property> {
@@ -269,6 +260,17 @@ export class PropertyService {
 		}
 
 		return result;
+	}
+
+		public async propertyStatsEditor(input: StatisticModifier): Promise<Property> {
+		const { _id, targetKey, modifier } = input;
+		return await this.propertyModel.findOneAndUpdate(
+			_id,
+			{
+				$inc: { [targetKey]: modifier },
+			},
+			{ new: true },
+		).exec();
 	}
 }
 
