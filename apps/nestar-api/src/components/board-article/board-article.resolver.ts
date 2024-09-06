@@ -88,10 +88,10 @@ export class BoardArticleResolver {
     @UseGuards(RolesGuard)
 	@Mutation((returns) => BoardArticle)
     public async removeBoardArticleByAdmin(
-        @Args("aticleId") input: string
+        @Args("articleId") input: string
     ): Promise<BoardArticle> {
 		console.log("Mutation: removeBoardArticleByAdmin");
-		const aticleId = shapeIntoMongoObjectId(input);
-		return await this.boardArticleService.removeBoardArticleByAdmin(aticleId);
+		const articleId = shapeIntoMongoObjectId(input);
+		return await this.boardArticleService.removeBoardArticleByAdmin(articleId);
 	}
 }

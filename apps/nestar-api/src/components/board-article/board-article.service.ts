@@ -30,7 +30,7 @@ export class BoardArticleService {
 
 			return result;
 		} catch (err) {
-			console.log('Error, Servise.model:', err.message);
+			console.log('Error, Service.model:', err.message);
 			throw new BadRequestException(Message.USED_MEMBER_NICK_OR_PHONE);
 		}
     }
@@ -48,11 +48,11 @@ export class BoardArticleService {
 			const viewInput = { memberId: memberId, viewRefId: articleId, viewGroup: ViewGroup.ARTICLE };
 			const newView = await this.viewService.recordView(viewInput);
 			if (newView) {
-				await this.boardAticleStatsEditor({ _id: articleId, targetKey: 'articleViews', modifier: 1 });
+				await this.boardArticleStatsEditor({ _id: articleId, targetKey: 'articleViews', modifier: 1 });
 				targetBoardArticle.articleViews++;
 			}
 		}
-		// kim kortotganini null qilib berilyapti, getMemberga togridan togri kirganda view ni oshirish kk
+		
 		targetBoardArticle.memberData = await this.memberService.getMember(null, targetBoardArticle.memberId);
 		return targetBoardArticle;
     }
@@ -114,7 +114,7 @@ export class BoardArticleService {
 		return result[0];
     }
     
-     	public async boardAticleStatsEditor(input: StatisticModifier): Promise<BoardArticle> {
+     	public async boardArticleStatsEditor(input: StatisticModifier): Promise<BoardArticle> {
 		const { _id, targetKey, modifier } = input;
 		return await this.boardArticleModel.findByIdAndUpdate(
 			_id,
@@ -182,8 +182,8 @@ export class BoardArticleService {
 		return result;
 	}
     
-    	public async removeBoardArticleByAdmin(aticleId: ObjectId): Promise<BoardArticle> {
-		const search: T = { _id: aticleId, articleStatus: BoardArticleStatus.DELETE };
+    	public async removeBoardArticleByAdmin(articleId: ObjectId): Promise<BoardArticle> {
+		const search: T = { _id: articleId, articleStatus: BoardArticleStatus.DELETE };
 		const result = await this.boardArticleModel.findOneAndDelete(search).exec();
         if (!result) throw new InternalServerErrorException(Message.REMOVE_FAILED);
 
