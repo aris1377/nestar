@@ -3,6 +3,7 @@ import { ObjectId } from 'mongoose';
 import { PropertyLocation, PropertyStatus, PropertyType } from '../../enums/property.enum';
 import { IsOptional } from 'class-validator';
 import { Member, TotalCounter } from '../member/member';
+import { MeLiked } from '../like/like';
 
 @ObjectType()
 export class Property {
@@ -83,7 +84,11 @@ export class Property {
 	updatedAt: Date;
 
 	@Field(() => Member,{ nullable: true })
-    memberData?: Member;
+	memberData?: Member;
+	
+	/** from aggregation **/
+	@Field(() => [MeLiked], { nullable: true })
+    meLiked?: MeLiked[];
 }
 
 @ObjectType()

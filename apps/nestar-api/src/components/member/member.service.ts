@@ -1,3 +1,4 @@
+
 import { LikeGroup } from './../../libs/enums/like.enum';
 import { BadRequestException, Inject, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
@@ -92,10 +93,19 @@ export class MemberService {
 				await this.memberModel.findOneAndUpdate(search, { $inc: { memberViews: 1 } }, { new: true }).exec();
 				targetMember.memberViews++;
 			}
+			//meLiked
+			const likeInput = {
+			memberId: memberId,
+			likeRefId: targetId,
+			likeGroup: LikeGroup.MEMBER,
+		};
+		targetMember.meLiked = await this.likeService.checkLikeExistence(likeInput);
 		}
 		return targetMember;
 	}
 
+	
+	
 
 	public async getAgents(memberId: ObjectId, input: AgentsInquiry): Promise<Members> {
 		const { text } = input.search;

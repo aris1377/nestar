@@ -29,7 +29,7 @@ export class CommentService {
         try {
 		  result = await this.commentModel.create(input);
 		} catch (err) {
-			console.log('Error, Servise.model:', err.message);
+			console.log('Error, Service.model:', err.message);
 			throw new BadRequestException(Message.CREATE_FAILED);
         }
         
@@ -43,7 +43,7 @@ export class CommentService {
                 break;
             
             case CommentGroup.ARTICLE:
-                await this.boardArticleService.boardAticleStatsEditor({
+                await this.boardArticleService.boardArticleStatsEditor({
                     _id: input.commentRefId,
                     targetKey: 'articleComments',
                     modifier: 1,
