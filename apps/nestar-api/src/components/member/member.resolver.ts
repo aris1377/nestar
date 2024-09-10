@@ -52,7 +52,6 @@ export class MemberResolver {
 	/** authenticated (user, admin, agent) */
 	@UseGuards(AuthGuard)
 	@Mutation(() => Member)
-	//AuthMember -> auth bogan memberlar malumotlarini olib beradi
 	public async updateMember(
 		@Args('input') input: MemberUpdate,
 		@AuthMember('_id') memberId: ObjectId,
