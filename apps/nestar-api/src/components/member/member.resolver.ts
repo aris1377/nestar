@@ -18,13 +18,11 @@ import { Message } from '../../libs/enums/common.enum';
 
 @Resolver()
 export class MemberResolver {
-	//memberService - objeckt
-	//MemberService - class
 	constructor(private readonly memberService: MemberService) {}
 
 	@Mutation(() => Member)
 	public async signup(@Args('input') input: MemberInput): Promise<Member> {
-		console.log('Mutation: sigup');
+		console.log('Mutation: signup');
 		return await this.memberService.signup(input);
 	}
 	@Mutation(() => Member)
