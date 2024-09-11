@@ -1,14 +1,45 @@
+// 2024-09-11
+// MIT 14
+
+// TASK ZT:
+
+// Shunday function yozing, bu function parametrdagi string ichida
+// bir marotabadan ortiq qaytarilmagan birinchi harf indeksini qaytarsin
+
+// MASALAN: firstUniqueCharIndex(“stamp”); return 0;
+
+// Yuqoridagi misolda, 'stamp' so'zi tarkibida barcha harflar bir marotabadan
+// ortiq takrorlanmagan, lekin shartga muvofiq, birinchi topilgan harf indeksi qaytarilmoqda.
+
+function firstUniqueCharIndex(s: string): number {
+    const charCount: { [key: string]: number } = {};
+
+    for (let char of s) {
+        charCount[char] = (charCount[char] || 0) + 1;
+    }
+  
+    for (let i = 0; i < s.length; i++) {
+        if (charCount[s[i]] === 1) {
+            return i;
+        }
+    }
+
+    return -1;
+}
+console.log(firstUniqueCharIndex("stamp")); // 0
+
+
 // TASK ZS:
 
 // Shunday function yozing, bu function parametrdagi array ichida
 // bir marotaba takrorlangan element'ni qaytarsin
 
-// MASALAN: singleNumber([4, 2, 1, 2, 1]); return 4;
-function singleNumber(nums: number[]): number {
-    return nums.reduce((acc, num) => acc ^ num, 0);
-}
+// // MASALAN: singleNumber([4, 2, 1, 2, 1]); return 4;
+// function singleNumber(nums: number[]): number {
+//     return nums.reduce((acc, num) => acc ^ num, 0);
+// }
 
-console.log(singleNumber([4, 2, 1, 2, 1])); 
+// console.log(singleNumber([4, 2, 1, 2, 1])); 
 
 
 // ZR-TASK:
