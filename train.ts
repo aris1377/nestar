@@ -1,3 +1,26 @@
+// ZU-TASK:
+
+// Shunday function yozing, u parametridagi array ichida takrorlanmagan raqamlar yig'indisini qaytarsin.
+// MASALAN: sumOfUnique([1,2,3,2]) return 4
+function sumOfUnique(nums: number[]): number {
+    const frequency: { [key: number]: number } = {};
+    
+    nums.forEach(num => {
+        frequency[num] = (frequency[num] || 0) + 1;
+    });
+
+    return nums.reduce((sum, num) => {
+        if (frequency[num] === 1) {
+            return sum + num;
+        }
+        return sum;
+    }, 0);
+}
+
+// 
+console.log(sumOfUnique([1, 2, 3, 2])); // 4
+
+
 // 2024-09-11
 // MIT 14
 
@@ -11,22 +34,22 @@
 // Yuqoridagi misolda, 'stamp' so'zi tarkibida barcha harflar bir marotabadan
 // ortiq takrorlanmagan, lekin shartga muvofiq, birinchi topilgan harf indeksi qaytarilmoqda.
 
-function firstUniqueCharIndex(s: string): number {
-    const charCount: { [key: string]: number } = {};
+// function firstUniqueCharIndex(s: string): number {
+//     const charCount: { [key: string]: number } = {};
 
-    for (let char of s) {
-        charCount[char] = (charCount[char] || 0) + 1;
-    }
+//     for (let char of s) {
+//         charCount[char] = (charCount[char] || 0) + 1;
+//     }
   
-    for (let i = 0; i < s.length; i++) {
-        if (charCount[s[i]] === 1) {
-            return i;
-        }
-    }
+//     for (let i = 0; i < s.length; i++) {
+//         if (charCount[s[i]] === 1) {
+//             return i;
+//         }
+//     }
 
-    return -1;
-}
-console.log(firstUniqueCharIndex("stamp")); // 0
+//     return -1;
+// }
+// console.log(firstUniqueCharIndex("stamp")); // 0
 
 
 // TASK ZS:
